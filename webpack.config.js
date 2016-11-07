@@ -59,7 +59,7 @@ module.exports = {
             { test: /\.(png|jpg|ico)$/, exclude: /node_modules/, loader: 'file-loader?name=images/[name].[ext]&context=./src/images' }
         ]
     },
-
+    
     quiet: false,
     noInfo: false,
 

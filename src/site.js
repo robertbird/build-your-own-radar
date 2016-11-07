@@ -5,6 +5,11 @@ require('./images/tw-logo.png');
 require('./images/favicon.ico');
 require('./images/radar_legend.png');
 
-const GoogleSheetInput = require('./util/factory');
+//const GoogleSheetInput = require('./util/googleFactory');
+//GoogleSheetInput().build();
 
-GoogleSheetInput().build();
+//const ExcelSheetInput = require('./util/excelFactory');
+//ExcelSheetInput().build();
+
+const JsonSheetInput = require('./util/jsonFactory');
+JsonSheetInput().build();

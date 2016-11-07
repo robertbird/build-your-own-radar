@@ -1,0 +1,114 @@
+[
+ {
+   "name": "App1",
+   "ring": "in dev",
+   "quadrant": "tools",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App2",
+   "ring": "trial",
+   "quadrant": "tools",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App3",
+   "ring": "assess",
+   "quadrant": "tools",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App4",
+   "ring": "hold",
+   "quadrant": "tools",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App5",
+   "ring": "in dev",
+   "quadrant": "languages & frameworks",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App6",
+   "ring": "trial",
+   "quadrant": "languages & frameworks",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App7",
+   "ring": "assess",
+   "quadrant": "languages & frameworks",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App8",
+   "ring": "hold",
+   "quadrant": "languages & frameworks",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App9",
+   "ring": "in dev",
+   "quadrant": "platforms",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App10",
+   "ring": "trial",
+   "quadrant": "platforms",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App11",
+   "ring": "assess",
+   "quadrant": "platforms",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App12",
+   "ring": "hold",
+   "quadrant": "platforms",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App13",
+   "ring": "in dev",
+   "quadrant": "techniques",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App14",
+   "ring": "trial",
+   "quadrant": "techniques",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App15",
+   "ring": "assess",
+   "quadrant": "techniques",
+   "isNew": "false",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ },
+ {
+   "name": "App16",
+   "ring": "hold",
+   "quadrant": "techniques",
+   "isNew": "true",
+   "description": "This is the description. You can use basic html such as the <strong>strong tag to emphasise keywords and phrases</strong> and insert <a href=\"https://www.thoughtworks.com\">anchor links to documentation and referance material</a>."
+ }
+]

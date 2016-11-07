@@ -1,5 +1,4 @@
 const d3 = require('d3');
-const Tabletop = require('tabletop');
 const _ = {
     map: require('lodash/map'),
     uniqBy: require('lodash/uniqBy'),
@@ -18,24 +17,19 @@ const SheetNotFoundError = require('../exceptions/sheetNotFoundError');
 const ContentValidator = require('./contentValidator');
 const SheetValidator = require('./sheetValidator');
 const ExceptionMessages = require('./exceptionMessages');
+const data = require('./data.json');
 
-
-const GoogleSheet = function (sheetId, sheetName) {
+const JsonSheet = function () {
     var self = {};
 
     self.build = function () {
         try {
-            var sheetValidator = new SheetValidator(sheetId);
-            sheetValidator.verifySheet();
 
-            Tabletop.init({
-                key: sheetId,
-                callback: createRadar
-            });
+            createRadar('My Technology Radar', data);
+        
         } catch (exception) {
             displayErrorMessage(exception);
         }
-
 
         function displayErrorMessage(exception) {
             d3.selectAll(".loading").remove();
@@ -60,23 +54,13 @@ const GoogleSheet = function (sheetId, sheetName) {
                 .html(message);
         }
 
-        function createRadar(sheets, tabletop) {
+        function createRadar(sheetName, all) {
 
             try {
 
-                if (!sheetName) {
-                    sheetName = Object.keys(sheets)[0];
-                }
-                var columnNames = tabletop.sheets(sheetName).column_names;
-
-                var contentValidator = new ContentValidator(columnNames);
-                contentValidator.verifyContent();
-                contentValidator.verifyHeaders();
-
-                var all = tabletop.sheets(sheetName).all();
                 var blips = _.map(all, new InputSanitizer().sanitize);
 
-                document.title = tabletop.googleSheetName;
+                document.title = sheetName;
                 d3.selectAll(".loading").remove();
 
                 var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
@@ -151,34 +135,12 @@ var QueryParams = function (queryString) {
 };
 
 
-const GoogleSheetInput = function () {
+const JsonSheetInput = function () {
     var self = {};
 
     self.build = function () {
-        var queryParams = QueryParams(window.location.search.substring(1));
-
-        if (queryParams.sheetId) {
-            var sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName);
-            sheet.init().build();
-        } else {
-            var content = d3.select('body')
-                .append('div')
-                .attr('class', 'input-sheet');
-
-            set_document_title();
-
-            plotLogo(content);
-
-            var bannerText = '<h1>Build your own radar</h1><p>Once you\'ve <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy.html">created your Radar</a>, you can use this service' +
-                ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html">Read this first.</a></p>';
-
-            plotBanner(content, bannerText);
-
-            plotForm(content);
-
-            plotFooter(content);
-
-        }
+        var sheet = JsonSheet();
+        sheet.init().build();
     };
 
     return self;
@@ -203,7 +165,7 @@ function plotFooter(content) {
         .append('p')
         .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. '
         + 'By using this service you agree to <a href="https://info.thoughtworks.com/visualize-your-tech-strategy-terms-of-service.html">ThoughtWorks\' terms of use</a>. '
-        + 'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. '
+        + 'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Json Sheet. '
         + 'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.');
 
 
@@ -221,7 +183,7 @@ function plotForm(content) {
     content.append('div')
         .attr('class', 'input-sheet__form')
         .append('p')
-        .html('<strong>Enter the URL of your <a href="https://support.google.com/docs/answer/37579" target="_blank">published</a> Google Sheet below…</strong>');
+        .html('<strong>Enter the URL of your <a href="https://support.Json.com/docs/answer/37579" target="_blank">published</a> Json Sheet below…</strong>');
 
     var form = content.select('.input-sheet__form').append('form')
         .attr('method', 'get');
@@ -229,7 +191,7 @@ function plotForm(content) {
     form.append('input')
         .attr('type', 'text')
         .attr('name', 'sheetId')
-        .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/1--_uLSNf/pubhtml');
+        .attr('placeholder', 'e.g. https://docs.Json.com/spreadsheets/d/1--_uLSNf/pubhtml');
 
     form.append('button')
         .attr('type', 'submit')
@@ -240,4 +202,4 @@ function plotForm(content) {
     form.append('p').html("<a href='https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#faq'>Need help?</a>");
 }
 
-module.exports = GoogleSheetInput;
+module.exports = JsonSheetInput;
